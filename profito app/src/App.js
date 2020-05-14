@@ -6,6 +6,7 @@ import Resume from './component/Resume';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from './component/Navbar';
 import Profito from './component/Profito';
+import Contact from './component/Contact';
 
 
 const App = () => {
@@ -19,6 +20,7 @@ const App = () => {
       <Route exact path="/" component={Home} />
       <Route exact path="/resume" component={Resume}/>
       <Route exact path='/profito' component={Profito}/>
+      <Route exact path="/Contact" component={Contact}/>
       </Switch>
     </Router>
     

@@ -23,7 +23,7 @@ const menuItems = [
   {listIcon:<Home/>,listText:"Home",listPath:'/'},
   {listIcon:<AssignmentInd/>,listText:"Resume",listPath:'/resume'},
   {listIcon:<Apps/>,listText:"Apps",listPath:'/profito'},
-  {listIcon:<ContactMail/>,listText:"Contact",listPath:'contact'}
+  {listIcon:<ContactMail/>,listText:"Contact",listPath:'/contact'}
 ]
 
 const Navbar = () => {
