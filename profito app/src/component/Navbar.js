@@ -1,13 +1,14 @@
 import React,{useState} from 'react';
-import {AppBar,Toolbar,IconButton,Typography, Avatar,Box, makeStyles,List,ListItem,ListItemIcon,ListItemText} from '@material-ui/core'; 
-import {ArrowBack,Home,Apps,AssignmentInd,ContactMail} from '@material-ui/icons';
+import {AppBar,Toolbar,IconButton,Typography, Avatar,Box, makeStyles,
+  List,ListItem,ListItemIcon,ListItemText,Drawer, Divider} from '@material-ui/core'; 
+import {Menu,Home,Apps,AssignmentInd,ContactMail} from '@material-ui/icons';
 import avatar from '../images/avatar.png';
 
 const useStyle = makeStyles((theme)=>({
   menuSliderContainer:{
     width:250,
     background:'grey',
-    height:'30rem'
+    height:'100%'
   },
   avatar:{
     display: "block",
@@ -25,16 +26,26 @@ const menuItems = [
 ]
 
 const Navbar = () => {
-  const [state, setState] = useState({right:false})
+  const [open, setOpen] = useState(false)
   const classes = useStyle();
 
-  const togglerSlider = (slider,open) =>{
-    setState({...state,[slider]:open})
-  } 
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  }
+  // const toggleSlider = (open) =>{
+  //   setOpen(open)
+  // } 
 
-  const slideList = slider => (
-    <Box className={classes.menuSliderContainer}>
+  // const slideList = slider => (
+    
+  // )
+  const slideList = () => (
+    <Box className={classes.menuSliderContainer} onClick={handleDrawerClose}>
           <Avatar src={avatar} alt="avatar" className={classes.avatar}/>
+          <Divider/>
           <List>
             {menuItems.map((listItem,key) => (
                <ListItem button key={key}>
@@ -51,8 +62,8 @@ const Navbar = () => {
         
         <AppBar position="static">
         <Toolbar>
-        <IconButton edge="start" color="inherit" aria-label="backarrow">
-        <ArrowBack/>
+        <IconButton edge="start" color="inherit" aria-label="drawe menu" onClick={handleDrawerOpen}>
+        <Menu/>
           </IconButton>
           <Typography variant="h6">
            Profito
@@ -60,6 +71,13 @@ const Navbar = () => {
           
         </Toolbar>
       </AppBar>
+      <Drawer
+        anchor="right"
+        open={open}
+      >
+      {slideList()}
+        </Drawer>
+        
       </>
     )
 }
