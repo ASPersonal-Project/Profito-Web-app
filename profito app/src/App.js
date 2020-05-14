@@ -5,6 +5,7 @@ import Home from './component';
 import Resume from './component/Resume';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom';
 import Navbar from './component/Navbar';
+import Profito from './component/Profito';
 
 
 const App = () => {
@@ -17,6 +18,7 @@ const App = () => {
       <Switch>
       <Route exact path="/" component={Home} />
       <Route exact path="/resume" component={Resume}/>
+      <Route exact path='/profito' component={Profito}/>
       </Switch>
     </Router>
     

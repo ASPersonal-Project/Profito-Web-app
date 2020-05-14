@@ -22,7 +22,7 @@ const useStyle = makeStyles((theme)=>({
 const menuItems = [
   {listIcon:<Home/>,listText:"Home",listPath:'/'},
   {listIcon:<AssignmentInd/>,listText:"Resume",listPath:'/resume'},
-  {listIcon:<Apps/>,listText:"Apps",listPath:'/app'},
+  {listIcon:<Apps/>,listText:"Apps",listPath:'/profito'},
   {listIcon:<ContactMail/>,listText:"Contact",listPath:'contact'}
 ]
 
@@ -36,13 +36,6 @@ const Navbar = () => {
   const handleDrawerClose = () => {
     setOpen(false);
   }
-  // const toggleSlider = (open) =>{
-  //   setOpen(open)
-  // } 
-
-  // const slideList = slider => (
-    
-  // )
   const slideList = () => (
     <Box className={classes.menuSliderContainer} onClick={handleDrawerClose}>
           <Avatar src={avatar} alt="avatar" className={classes.avatar}/>
